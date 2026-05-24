@@ -50,8 +50,8 @@ export default function Footer() {
           <div>
             <p className="font-heading font-semibold text-sm mb-4">Контакты</p>
             <div className="space-y-2 text-sm text-background/60">
-              <p>Николай: +7 (922) 312-07-35</p>
-              <p>Виктор: +7 (922) 312-07-35</p>
+              <p>Николай: +7 (984) 262-09-36</p>
+              <p>Виктор: +7 (919) 107-22-44</p>
               <a href="https://t.me/nikolay_snb" target="_blank" rel="noopener noreferrer" className="block hover:text-background transition">Telegram: @nikolay_snb</a>
               <a href="mailto:contact@bratouverie.ru" className="block hover:text-background transition">contact@bratouverie.ru</a>
             </div>

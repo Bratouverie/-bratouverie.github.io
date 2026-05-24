@@ -4,16 +4,16 @@ import { Phone, MessageCircle, Mail, Clock, MapPin } from "lucide-react";
 const contacts = [
   {
     name: "Николай (специалист)",
-    phone: "+7 (922) 312-07-35",
-    phoneLink: "tel:+79223120735",
+    phone: "+7 (984) 262-09-36",
+    phoneLink: "tel:+79842620936",
     telegram: "@nikolay_snb",
     telegramLink: "https://t.me/nikolay_snb",
     whatsapp: "https://wa.me/79223120735",
   },
   {
-    name: "Виктор",
-    phone: "+7 (922) 312-07-35",
-    phoneLink: "tel:+79223120735",
+    name: "Виктор (специалист)",
+    phone: "+7 (919) 107-22-44",
+    phoneLink: "tel:+79191072244",
     telegram: "@viktor_snb",
     telegramLink: "https://t.me/viktor_snb",
     whatsapp: "https://wa.me/79223120735",
