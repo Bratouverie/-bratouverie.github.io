@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Star, ChevronLeft, ChevronRight, MapPin, Clock } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight, MapPin, Clock, Info } from "lucide-react";
 
 const reviews = [
   {
@@ -60,6 +60,40 @@ const reviews = [
   },
 ];
 
+function ReviewText({ text }) {
+  const parts = text.split("Братоуверие-СНБ");
+  return (
+    <p className="mt-4 text-sm text-muted-foreground leading-relaxed italic">
+      &quot;{parts.map((part, i) =>
+        i < parts.length - 1 ? (
+          <span key={i}>{part}<span className="font-semibold text-foreground not-italic">Братоуверие-СНБ</span><EditorNote /></span>
+        ) : part
+      )}&quot;
+    </p>
+  );
+}
+
+function EditorNote() {
+  const [open, setOpen] = useState(false);
+  return (
+    <span className="relative inline-block align-middle ml-1">
+      <button
+        onClick={() => setOpen(!open)}
+        className="inline-flex items-center gap-1 text-xs text-muted-foreground border border-border rounded px-1.5 py-0.5 bg-muted hover:bg-secondary transition cursor-pointer"
+        title="Примечание редактора"
+      >
+        <Info className="w-3 h-3" />
+        <span>прим. ред.</span>
+      </button>
+      {open && (
+        <span className="absolute left-0 top-full mt-1 z-20 w-52 bg-white border border-border rounded-xl shadow-lg p-3 text-xs text-foreground leading-relaxed">
+          ранее ООО «Братоуверие»
+        </span>
+      )}
+    </span>
+  );
+}
+
 export default function ReviewsSection() {
   const [idx, setIdx] = useState(0);
   const visible = 1;
@@ -116,7 +150,7 @@ export default function ReviewsSection() {
               ))}
             </div>
 
-            <p className="mt-4 text-sm text-muted-foreground leading-relaxed italic">&quot;{r.text}&quot;</p>
+            <ReviewText text={r.text} />
 
             <div className="mt-4 pt-4 border-t border-border">
               <p className="text-xs text-muted-foreground">Заработано за период</p>

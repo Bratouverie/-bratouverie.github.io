@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ExternalLink } from "lucide-react";
 
 export default function Footer() {
   const scrollTo = (id) => {
@@ -8,56 +9,83 @@ export default function Footer() {
 
   return (
     <footer className="bg-foreground text-background">
+      {/* Main site CTA strip */}
+      <div className="border-b border-background/10 bg-background/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <p className="font-heading font-semibold text-background text-sm">
+              Контакты, директорат, документация и подробная информация о проектах —
+            </p>
+            <p className="text-background/60 text-sm">на официальном сайте ООО «Братоуверие-СНБ»</p>
+          </div>
+          <a
+            href="https://bratouverie-snb.ru"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-shrink-0 inline-flex items-center gap-2 bg-primary text-primary-foreground font-heading font-semibold px-5 py-2.5 rounded-xl hover:bg-primary/90 transition text-sm"
+          >
+            <ExternalLink className="w-4 h-4" />
+            bratouverie-snb.ru
+          </a>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          <div>
+          {/* Brand */}
+          <div className="lg:col-span-1">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
                 <span className="text-primary-foreground font-heading font-bold text-sm">СНБ</span>
               </div>
               <div>
                 <p className="font-heading font-bold text-sm">Братоуверие-СНБ</p>
+                <p className="text-xs text-background/50">ООО «Братоуверие-СНБ»</p>
               </div>
             </div>
             <p className="mt-4 text-sm text-background/60 leading-relaxed">
-              Партнёрство в подборе персонала для государственных проектов России
+              Партнёрство в подборе персонала для государственных проектов Российской Федерации
             </p>
           </div>
 
+          {/* Navigation */}
           <div>
-            <p className="font-heading font-semibold text-sm mb-4">О компании</p>
+            <p className="font-heading font-semibold text-sm mb-4 text-background/80 uppercase tracking-wider">О компании</p>
             <div className="space-y-2">
               {[
                 { label: "О нас", href: "#about" },
                 { label: "Гарантии", href: "#guarantees" },
-                { label: "Условия", href: "#steps" },
+                { label: "Как начать", href: "#steps" },
+                { label: "Обучение", href: "#training" },
                 { label: "FAQ", href: "#faq" },
               ].map((l) => (
                 <button key={l.href} onClick={() => scrollTo(l.href)} className="block text-sm text-background/60 hover:text-background transition">
                   {l.label}
                 </button>
               ))}
-              <Link to="/about" className="block text-sm text-background/60 hover:text-background transition">О компании</Link>
-              <Link to="/contact" className="block text-sm text-background/60 hover:text-background transition">Контакты</Link>
+              <Link to="/about" className="block text-sm text-background/60 hover:text-background transition">Страница «О компании»</Link>
             </div>
           </div>
 
+          {/* Projects */}
           <div>
-            <p className="font-heading font-semibold text-sm mb-4">Проекты</p>
+            <p className="font-heading font-semibold text-sm mb-4 text-background/80 uppercase tracking-wider">Проекты</p>
             <div className="space-y-2">
-              <button onClick={() => scrollTo("#projects")} className="block text-sm text-background/60 hover:text-background transition">Восстановление ЛНР-ДНР</button>
+              <button onClick={() => scrollTo("#projects")} className="block text-sm text-background/60 hover:text-background transition">Программа восстановления ЛНР-ДНР</button>
               <button onClick={() => scrollTo("#projects")} className="block text-sm text-background/60 hover:text-background transition">Арктический вызов</button>
               <button onClick={() => scrollTo("#projects")} className="block text-sm text-background/60 hover:text-background transition">Национальный проект «Кадры»</button>
             </div>
           </div>
 
+          {/* Partner program */}
           <div>
-            <p className="font-heading font-semibold text-sm mb-4">Контакты</p>
-            <div className="space-y-2 text-sm text-background/60">
-              <p>Николай: +7 (984) 262-09-36</p>
-              <p>Виктор: +7 (919) 107-22-44</p>
-              <a href="https://t.me/nikolay_snb" target="_blank" rel="noopener noreferrer" className="block hover:text-background transition">Telegram: @nikolay_snb</a>
-              <a href="mailto:contact@bratouverie.ru" className="block hover:text-background transition">contact@bratouverie.ru</a>
+            <p className="font-heading font-semibold text-sm mb-4 text-background/80 uppercase tracking-wider">Партнёрам</p>
+            <div className="space-y-2">
+              <button onClick={() => scrollTo("#rewards")} className="block text-sm text-background/60 hover:text-background transition">Вознаграждения</button>
+              <button onClick={() => scrollTo("#reviews")} className="block text-sm text-background/60 hover:text-background transition">Отзывы партнёров</button>
+              <button onClick={() => scrollTo("#cta")} className="block text-sm text-background/60 hover:text-background transition">Стать партнёром</button>
+              <button onClick={() => scrollTo("#contacts")} className="block text-sm text-background/60 hover:text-background transition">Связаться с нами</button>
+              <Link to="/contact" className="block text-sm text-background/60 hover:text-background transition">Страница контактов</Link>
             </div>
           </div>
         </div>
@@ -65,8 +93,8 @@ export default function Footer() {
 
       <div className="border-t border-background/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-background/40">© 2026 ООО &quot;Братоуверие-СНБ&quot; | Все права защищены</p>
-          <p className="text-xs text-background/40">Работаем с администрацией и правительством РФ</p>
+          <p className="text-xs text-background/40">© 2026 ООО «Братоуверие-СНБ» | Все права защищены</p>
+          <p className="text-xs text-background/40">Официальный партнёр государственных проектов РФ</p>
         </div>
       </div>
     </footer>
