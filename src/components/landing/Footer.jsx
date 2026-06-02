@@ -71,9 +71,11 @@ export default function Footer() {
           <div>
             <p className="font-heading font-semibold text-sm mb-4 text-background/80 uppercase tracking-wider">Проекты</p>
             <div className="space-y-2">
-              <button onClick={() => scrollTo("#projects")} className="block text-sm text-background/60 hover:text-background transition">Программа восстановления ЛНР-ДНР</button>
-              <button onClick={() => scrollTo("#projects")} className="block text-sm text-background/60 hover:text-background transition">Арктический вызов</button>
-              <button onClick={() => scrollTo("#projects")} className="block text-sm text-background/60 hover:text-background transition">Национальный проект «Кадры»</button>
+              {["Программа восстановления ЛНР-ДНР", "Арктический вызов", "Национальный проект «Кадры»"].map((p) => (
+                <button key={p} onClick={() => scrollTo("#projects")} className="block text-sm text-background/60 hover:text-background transition text-left leading-snug">
+                  {p}
+                </button>
+              ))}
             </div>
           </div>
 
