@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 
 const tableData = [
-  { cat: "Рабочие", role: "Электромонтёр", project: "Программа восстановления ЛНР-ДНР", reward: "55 – 90 тыс.", demand: "Высокий", demandColor: "text-red-500" },
+  { cat: "Рабочие", role: "Разнорабочий", project: "Программа восстановления ЛНР-ДНР", reward: "55 – 90 тыс.", demand: "Высокий", demandColor: "text-red-500" },
   { cat: "", role: "Строитель", project: "Программа восстановления ЛНР-ДНР", reward: "50 – 100 тыс.", demand: "Высокий", demandColor: "text-red-500" },
-  { cat: "", role: "Монтажник", project: "Программа восстановления ЛНР-ДНР", reward: "55 – 85 тыс.", demand: "Высокий", demandColor: "text-red-500" },
-  { cat: "Средний уровень", role: "Мастер участка", project: "Программа восстановления ЛНР-ДНР", reward: "100 – 150 тыс.", demand: "Средний", demandColor: "text-amber-500" },
+  { cat: "", role: "Автослесарь", project: "Программа восстановления ЛНР-ДНР", reward: "55 – 85 тыс.", demand: "Высокий", demandColor: "text-red-500" },
+  { cat: "Средний уровень", role: "Инженер связи", project: "Программа восстановления ЛНР-ДНР", reward: "100 – 150 тыс.", demand: "Средний", demandColor: "text-amber-500" },
   { cat: "", role: "Инженер-технолог", project: "Арктический вызов", reward: "120 – 180 тыс.", demand: "Высокий", demandColor: "text-green-600" },
-  { cat: "", role: "Бригадир", project: "Программа восстановления ЛНР-ДНР", reward: "110 – 160 тыс.", demand: "Высокий", demandColor: "text-red-500" },
+  { cat: "", role: "Медицинский работник", project: "Программа восстановления ЛНР-ДНР", reward: "110 – 160 тыс.", demand: "Высокий", demandColor: "text-red-500" },
   { cat: "Высокий уровень", role: "Главный инженер", project: "Арктический вызов", reward: "150 – 250 тыс.", demand: "Высокий", demandColor: "text-green-600" },
   { cat: "", role: "Руководитель отдела", project: "Национальный проект «Кадры»", reward: "160 – 240 тыс.", demand: "Средний", demandColor: "text-amber-500" },
   { cat: "Топ-менеджмент", role: "Геолог-нефтяник", project: "Арктический вызов", reward: "200 – 300 тыс.", demand: "Высокий", demandColor: "text-green-600" },
@@ -14,7 +14,7 @@ const tableData = [
 ];
 
 const examples = [
-  { title: "Новичок", subtitle: "1 месяц после обучения", result: "1 электромонтёр (ЛНР-ДНР)", total: "65 000 ₽", color: "border-blue-500" },
+  { title: "Новичок", subtitle: "1 месяц после обучения", result: "1 разнорабочий (ЛНР-ДНР)", total: "65 000 ₽", color: "border-blue-500" },
   { title: "Средний партнёр", subtitle: "6 месяцев сотрудничества", result: "3 специалиста", total: "395 000 ₽", color: "border-green-500" },
   { title: "Топ-партнёр", subtitle: "2 года сотрудничества", result: "4 специалиста", total: "775 000 ₽", color: "border-amber-500" },
 ];

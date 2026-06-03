@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const NAV_ITEMS = [
   { label: "Главная", href: "#hero" },
@@ -15,11 +16,22 @@ const NAV_ITEMS = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const scrollTo = (href) => {
     setOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (location.pathname !== "/") {
+      navigate("/");
+      // After navigation, wait for DOM then scroll
+      setTimeout(() => {
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 300);
+    } else {
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
