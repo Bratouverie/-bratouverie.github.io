@@ -1,9 +1,17 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Header from "@/components/landing/Header";
 import Footer from "@/components/landing/Footer";
+import { Link } from "react-router-dom";
 import { Phone, MessageCircle, Mail, Clock, MapPin } from "lucide-react";
 
 export default function Contact() {
+  useEffect(() => {
+    document.title = "Контакты Братоуверие-СНБ — связаться со специалистами";
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc) desc.setAttribute("content", "Контакты ООО «Братоуверие-СНБ». Свяжитесь с нашими специалистами по подбору кадров для госпроектов РФ. Телефон, Telegram, WhatsApp, email.");
+  }, []);
+
   return (
     <div className="font-body">
       <Header />
@@ -14,8 +22,14 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
+            {/* Breadcrumb */}
+            <nav className="mb-6 text-sm text-muted-foreground" aria-label="Хлебные крошки">
+              <Link to="/" className="hover:text-foreground transition">Главная</Link>
+              <span className="mx-2">/</span>
+              <span>Контакты</span>
+            </nav>
             <h1 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground">
-              Контакты
+              Контакты — Братоуверие-СНБ
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">
               Свяжитесь с нашими специалистами любым удобным способом

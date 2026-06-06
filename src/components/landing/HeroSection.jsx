@@ -19,7 +19,14 @@ export default function HeroSection() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center pt-16 overflow-hidden">
       <div className="absolute inset-0">
-        <img src={HERO_IMG} alt="Профессиональная корпоративная атмосфера" className="w-full h-full object-cover" />
+        <img
+          src={HERO_IMG}
+          alt="Рекрутинг для государственных проектов РФ — партнёрская программа Братоуверие-СНБ"
+          title="Братоуверие-СНБ — подбор кадров для госпроектов"
+          className="w-full h-full object-cover"
+          loading="eager"
+          fetchpriority="high"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-[#1e3c72]/90 via-[#1e3c72]/75 to-[#1e3c72]/50" />
       </div>
 

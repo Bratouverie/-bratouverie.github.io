@@ -1,13 +1,28 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Header from "@/components/landing/Header";
 import Footer from "@/components/landing/Footer";
+import { Link } from "react-router-dom";
 
 export default function About() {
+  useEffect(() => {
+    document.title = "О компании Братоуверие-СНБ — партнёр госпроектов РФ";
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc) desc.setAttribute("content", "ООО «Братоуверие-СНБ» — официальный партнёр правительства РФ по подбору кадров для государственных проектов: ЛНР-ДНР, Арктика, Нацпроект «Кадры». Узнайте о компании.");
+  }, []);
+
   return (
     <div className="font-body">
       <Header />
       <main className="pt-24 pb-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Breadcrumb */}
+          <nav className="mb-6 text-sm text-muted-foreground" aria-label="Хлебные крошки">
+            <Link to="/" className="hover:text-foreground transition">Главная</Link>
+            <span className="mx-2">/</span>
+            <span>О компании</span>
+          </nav>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -47,6 +62,22 @@ export default function About() {
                 Присоединяйтесь к команде Братоуверие-СНБ и станьте частью государственных проектов,
                 которые формируют будущее России.
               </p>
+            </div>
+
+            {/* Internal linking block */}
+            <div className="mt-12 p-6 bg-secondary rounded-2xl border border-border">
+              <h2 className="font-heading font-semibold text-lg text-foreground mb-4">Узнайте больше</h2>
+              <div className="grid sm:grid-cols-3 gap-3">
+                <Link to="/#projects" onClick={() => { window.scrollTo(0,0); setTimeout(() => { document.querySelector('#projects')?.scrollIntoView({behavior:'smooth'}); }, 300); }} className="block p-4 bg-card rounded-xl border border-border hover:shadow-md transition text-sm font-medium text-primary hover:text-primary/80">
+                  → Государственные проекты
+                </Link>
+                <Link to="/#training" onClick={() => { window.scrollTo(0,0); setTimeout(() => { document.querySelector('#training')?.scrollIntoView({behavior:'smooth'}); }, 300); }} className="block p-4 bg-card rounded-xl border border-border hover:shadow-md transition text-sm font-medium text-primary hover:text-primary/80">
+                  → Программа обучения
+                </Link>
+                <Link to="/#rewards" onClick={() => { window.scrollTo(0,0); setTimeout(() => { document.querySelector('#rewards')?.scrollIntoView({behavior:'smooth'}); }, 300); }} className="block p-4 bg-card rounded-xl border border-border hover:shadow-md transition text-sm font-medium text-primary hover:text-primary/80">
+                  → Вознаграждения партнёров
+                </Link>
+              </div>
             </div>
           </motion.div>
         </div>

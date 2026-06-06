@@ -11,7 +11,7 @@ const projects = [
     status: "АКТИВНЫЙ ПРОЕКТ",
     statusColor: "bg-red-500",
     image: IMG_LNR,
-    alt: "Современная инфраструктура и строительство",
+    alt: "Восстановление ЛНР и ДНР — строительство и инфраструктура госпроект",
     description: "Масштабная программа восстановления и развития. Требуются специалисты в области строительства, инженерии, логистики, управления проектами и социальной политики.",
     specialists: ["Разнорабочий", "Строитель", "Автослесарь", "Водитель", "Инженер связи", "Электромонтёр", "Сварщик", "Медицинский работник", "Логист"],
     reward: "От 50 до 250 тыс. руб.",
@@ -22,7 +22,7 @@ const projects = [
     status: "ВЫСОКИЙ СПРОС",
     statusColor: "bg-green-500",
     image: IMG_ARCTIC,
-    alt: "Арктический пейзаж с северным сиянием",
+    alt: "Арктический вызов — освоение арктических территорий России вакансии",
     description: "Национальная инициатива по развитию и освоению Арктического региона. Требуются специалисты высокого уровня, готовые к работе в сложных климатических условиях.",
     specialists: ["Геологи и нефтегазовики", "Буровики и буровые мастера", "Инженеры-технологи", "Экологи", "Специалисты по логистике", "Управленцы", "Медицинский персонал"],
     reward: "От 50 до 300 тыс. руб.",
@@ -33,7 +33,7 @@ const projects = [
     status: "ПОСТОЯННЫЙ ПОТОК",
     statusColor: "bg-yellow-500",
     image: IMG_KADRY,
-    alt: "Современная учебная аудитория",
+    alt: "Национальный проект Кадры — подготовка специалистов для экономики России",
     description: "Федеральный проект, направленный на подготовку и переподготовку кадров для экономики России. Охватывает различные отрасли.",
     specialists: ["Тренеры и менторы", "Преподаватели", "Специалисты по развитию персонала", "Менеджеры по обучению", "Консультанты карьеры", "Координаторы программ"],
     reward: "От 50 до 150 тыс. руб.",
@@ -69,7 +69,7 @@ export default function ProjectsSection() {
               className="group bg-card rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
             >
               <div className="relative h-48 overflow-hidden">
-                <img src={p.image} alt={p.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={p.image} alt={p.alt} title={p.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute top-3 left-3">
                   <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold text-white ${p.statusColor}`}>
                     <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />

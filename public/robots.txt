@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Disallow admin/private routes
+Disallow: /admin
+Disallow: /api/
+Disallow: /*.json$
+
+# Crawl-delay for polite bots
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://bratouverie-snb.ru/sitemap.xml
